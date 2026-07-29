@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f2ee">
+  <meta name="description" content="GENEVIEVE LISTENS — private voice-first support, safety and clinician handover for Tracey.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>GENEVIEVE LISTENS</title>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <div class="shell">
+    <header class="topbar">
+      <div class="brandmark"><img src="ga-mark-square.png" alt="Official locked GA emblem"></div>
+      <div class="brandcopy">
+        <div class="eyebrow">GENEVIEVE APP™</div>
+        <h1>Listens</h1>
+      </div>
+      <button id="privacyButton" class="privacy-pill" type="button" aria-label="Privacy information">
+        <span class="privacy-dot"></span>Private
+      </button>
+    </header>
+
+    <main>
+      <section id="listenScreen" class="screen active" aria-labelledby="listenTitle">
+        <article class="hero-card">
+          <p class="kicker">TRACEY'S QUIET PLACE</p>
+          <h2 id="listenTitle">Say it exactly as it is.</h2>
+          <p class="lead">No explaining it neatly. No typing. No judgement for strong words.</p>
+
+          <div class="voice-stage" id="voiceStage">
+            <div class="voice-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+            <button id="recordButton" class="voice-button" type="button" aria-label="Start talking to Genevieve">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 0 0 3.5-3.5V6.5a3.5 3.5 0 1 0-7 0V12a3.5 3.5 0 0 0 3.5 3.5Zm6-3.5a1 1 0 1 0-2 0 4 4 0 0 1-8 0 1 1 0 1 0-2 0 6.01 6.01 0 0 0 5 5.917V20H8.5a1 1 0 1 0 0 2h7a1 1 0 1 0 0-2H13v-2.083A6.01 6.01 0 0 0 18 12Z"/></svg>
+            </button>
+          </div>
+          <p id="recordLabel" class="record-label">Tap once, talk freely, tap again</p>
+          <p id="recordTimer" class="record-timer" aria-live="polite">Ready when you are</p>
+
+          <div id="liveTranscriptWrap" class="transcript-wrap hidden">
+            <div class="transcript-label">I heard</div>
+            <p id="liveTranscript"></p>
+          </div>
+
+          <div class="need-row" aria-label="What Genevieve should do with this">
+            <button class="need-chip selected" data-need="listen" type="button">Stay with me</button>
+            <button class="need-chip" data-need="settle" type="button">Settle me</button>
+            <button class="need-chip" data-need="record" type="button">Keep the facts</button>
+            <button class="need-chip" data-need="hold" type="button">Hold it—don’t send</button>
+          </div>
+
+          <div id="afterRecording" class="after-recording hidden">
+            <button id="saveVoiceButton" class="button primary" type="button">Keep this safely</button>
+            <button id="discardVoiceButton" class="button quiet" type="button">Discard</button>
+          </div>
+        </article>
+
+        <article id="responseCard" class="response-card hidden" aria-live="polite">
+          <div class="response-topline">
+            <span class="mini-mark"><img src="ga-mark-square.png" alt=""></span>
+            <span>GENEVIEVE HEARD YOU</span>
+          </div>
+          <p id="responseText" class="response-text"></p>
+          <div class="response-actions">
+            <button id="speakResponseButton" class="icon-action" type="button" aria-label="Read Genevieve's response aloud">Listen</button>
+            <button id="helpedButton" class="icon-action" type="button">That helped</button>
+            <button id="notEnoughButton" class="icon-action" type="button">Not enough</button>
+          </div>
+        </article>
+
+        <article class="safety-line">
+          <div>
+            <span class="safety-title">Need urgent human help?</span>
+            <span class="safety-sub">Open the safety check without explaining anything.</span>
+          </div>
+          <button id="openSafetyButton" class="arrow-button" type="button" aria-label="Open safety check">→</button>
+        </article>
+      </section>
+
+      <section id="settleScreen" class="screen" aria-labelledby="settleTitle">
+        <article class="section-card soft-card">
+          <p class="kicker">SETTLE FIRST · SOLVE SECOND</p>
+          <h2 id="settleTitle">Nothing has to be fixed in this minute.</h2>
+          <p class="lead">Keep your eyes open. You do not have to touch your face or torso.</p>
+
+          <div class="settle-orb" aria-hidden="true"><span></span></div>
+          <p id="settlePrompt" class="settle-prompt">Look around and find three quiet colours.</p>
+          <div id="settleTime" class="settle-time">01:30</div>
+          <button id="settleButton" class="button primary compact" type="button">Begin</button>
+        </article>
+
+        <article class="section-card">
+          <h3>What Genevieve will remind you</h3>
+          <div class="truth-list">
+            <div><span>01</span><p><b>Silence is not a measure of your worth.</b><br>“They have not answered” and “I am not worth answering” are not the same fact.</p></div>
+            <div><span>02</span><p><b>Save before acting.</b><br>Keep the evidence. Leave final emails, cancellations and deletion decisions until the surge drops.</p></div>
+            <div><span>03</span><p><b>One next step only.</b><br>No hundred-step list. Name the owner, the promise and the deadline.</p></div>
+            <div><span>04</span><p><b>Mr Gruff belongs in the plan.</b><br>Notice one ordinary thing he is doing and stay with the next five minutes.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="recordScreen" class="screen" aria-labelledby="recordTitle">
+        <article class="section-heading">
+          <p class="kicker">YOUR MEMORY OUTSIDE YOUR HEAD</p>
+          <h2 id="recordTitle">Voice record</h2>
+          <p class="lead">What happened, what set you off, what Genevieve noticed and what helped.</p>
+        </article>
+        <div id="entriesList" class="entries-list"></div>
+      </section>
+
+      <section id="patternsScreen" class="screen" aria-labelledby="patternsTitle">
+        <article class="section-heading">
+          <p class="kicker">LEARNING WITHOUT DIAGNOSING</p>
+          <h2 id="patternsTitle">Your patterns</h2>
+          <p class="lead">Genevieve learns from your own voice check-ins—not population averages.</p>
+        </article>
+
+        <div id="patternCards" class="pattern-grid"></div>
+
+        <article class="section-card">
+          <h3>What I already understand about Tracey</h3>
+          <div class="understand-list">
+            <div><b>What can set off a crisis</b><p>Silence, broken promises, missed callbacks, cancelled care, abrupt changes, conflicting information, unclear responsibility, reduced support, no closure, privacy breaches, being made to repeat yourself and technology failing when you need it.</p></div>
+            <div><b>How distress can show itself</b><p>Strong language, repeated attempts to get an answer, wanting to cancel or leave, a rapid drop in self-worth, feeling rejected or ashamed, numbness or dissociation, and suicidal thoughts becoming louder.</p></div>
+            <div><b>What is more likely to help</b><p>Immediate acknowledgement, direct truth, one step at a time, exact dates and named responsibility, no punishment for distress language, privacy, preserving evidence before acting, written follow-through and keeping Mr Gruff included.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="handoverScreen" class="screen" aria-labelledby="handoverTitle">
+        <article class="section-card handover-card">
+          <p class="kicker">FOR A PSYCHOLOGIST WHO WILL LISTEN</p>
+          <h2 id="handoverTitle">Clinician handover</h2>
+          <p class="lead">One tap creates a clear document from your saved check-ins, safety flags, recurring triggers and what helps. Nothing is sent automatically.</p>
+          <div class="handover-seal"><span>Private</span><strong>Your approval only</strong></div>
+          <button id="createHandoverButton" class="button primary" type="button">Create my handover</button>
+          <button id="backupButton" class="button quiet" type="button">Back up my private record</button>
+        </article>
+
+        <article class="section-card">
+          <h3>No Lost Follow-Up™</h3>
+          <p class="muted">Record a promise by speaking it. Genevieve saves the date and reminds you what was actually agreed.</p>
+          <button id="followupVoiceButton" class="button outline" type="button">Record a promise or callback</button>
+          <div id="followupList" class="followup-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <nav class="dock" aria-label="Main navigation">
+      <button class="dock-item active" data-target="listenScreen" type="button"><span>◌</span>Listen</button>
+      <button class="dock-item" data-target="settleScreen" type="button"><span>⌁</span>Settle</button>
+      <button class="dock-item" data-target="recordScreen" type="button"><span>▱</span>Record</button>
+      <button class="dock-item" data-target="patternsScreen" type="button"><span>∿</span>Patterns</button>
+      <button class="dock-item" data-target="handoverScreen" type="button"><span>＋</span>Handover</button>
+    </nav>
+  </div>
+
+  <dialog id="privacyDialog" class="modal">
+    <form method="dialog">
+      <button class="modal-close" value="close" aria-label="Close">×</button>
+      <p class="kicker">PRIVATE BY DEFAULT</p>
+      <h2>Your voice stays here.</h2>
+      <p>Recordings and transcripts are kept in this browser on this device. This version has no account, no advertising, no clinician portal and no automatic sharing.</p>
+      <p class="small">Deleting Safari website data, using private browsing or changing the website address can remove local data. Use the backup button regularly.</p>
+    </form>
+  </dialog>
+
+  <dialog id="safetyDialog" class="modal safety-modal">
+    <form method="dialog">
+      <button class="modal-close" value="close" aria-label="Close">×</button>
+      <p class="kicker danger-text">SAFETY CHECK</p>
+      <h2>Are you in immediate danger of hurting yourself?</h2>
+      <p>You do not need to explain. Tap the closest answer.</p>
+      <div class="safety-choices">
+        <button class="safety-choice safe" data-risk="safe" value="close" type="button"><b>Safe right now</b><span>Stay with Genevieve</span></button>
+        <button class="safety-choice unsure" data-risk="unsure" type="button"><b>Not sure</b><span>Bring in human support</span></button>
+        <button class="safety-choice danger" data-risk="danger" type="button"><b>In danger</b><span>I may act now</span></button>
+      </div>
+      <div id="urgentPanel" class="urgent-panel hidden">
+        <p><b>Do not stay alone.</b> Move away from anything you could use to hurt yourself and choose a human connection now.</p>
+        <a class="button danger-button" href="tel:000">Call 000</a>
+        <a class="button primary" href="tel:+61131114">Call Lifeline 13 11 14</a>
+        <a class="button outline" href="sms:+61477131114">Text Lifeline 0477 13 11 14</a>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="unsupportedDialog" class="modal">
+    <form method="dialog">
+      <button class="modal-close" value="close" aria-label="Close">×</button>
+      <p class="kicker">MICROPHONE HELP</p>
+      <h2>I can still keep your voice.</h2>
+      <p>Your browser can record audio but may not create a written transcript. The recording will still be saved. On iPhone, allow microphone access when asked.</p>
+      <button class="button primary" value="close">Understood</button>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

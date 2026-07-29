@@ -1,0 +1,37 @@
+{
+  "name": "GENEVIEVE LISTENS — Tracey",
+  "short_name": "Listens",
+  "description": "Private voice-first listening, safety support and clinician handover.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f2ee",
+  "theme_color": "#f7f2ee",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
