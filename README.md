@@ -1,5 +1,7 @@
 # GENEVIEVE LISTENS™ — Tracey
 
+**Canonical voice-first LISTENS repository.** The older `Genevieve-listens-` copy has the same application logic but lacks the later locked GA brand master and is retained only for integration/reference history.
+
 A private, voice-first crisis-support and clinician-handover PWA built around Tracey's stated needs and observed patterns.
 
 ## What is working
@@ -16,7 +18,7 @@ A private, voice-first crisis-support and clinician-handover PWA built around Tr
 - Voice-based promise/callback record.
 - Private backup including audio data.
 - Offline PWA after first successful load.
-- Static Vercel deployment; no API keys and no server required.
+- Static GitHub + Cloudflare Pages deployment; no API keys and no server required.
 
 ## Important limits
 
@@ -28,9 +30,15 @@ A private, voice-first crisis-support and clinician-handover PWA built around Tr
 
 ## Deploy
 
-Upload the contents of this folder to one GitHub repository and import that repository into Vercel. No build command or environment variables are required.
+This static app uses the ON TRACK by TRACE platform direction: **GitHub + Cloudflare Pages**.
 
-For microphone access, use the secure Vercel HTTPS address and approve the browser microphone prompt.
+- Connect this repository to Cloudflare Pages.
+- Build command: none.
+- Output directory: repository root.
+- No environment variables are required.
+- The root `_headers` file preserves the microphone, content-type, referrer and service-worker cache headers that were previously carried by the legacy Vercel configuration.
+
+For microphone access, use the secure Cloudflare HTTPS address and approve the browser microphone prompt.
 
 ## Locked GA brand master
 
